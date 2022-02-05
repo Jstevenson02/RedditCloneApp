@@ -55,12 +55,12 @@ export class UserResolver {
       };
     }
 
-    if (options.password.length <= 3) {
+    if (options.password.length <= 2) {
       return {
         errors: [
           {
-            field: "username",
-            message: "length must be greater than 3",
+            field: "password",
+            message: "length must be greater than 2",
           },
         ],
       };
@@ -123,7 +123,7 @@ export class UserResolver {
     req.session!.userId = user.id;
 
     return {
-      user,
+      user
     };
   }
 

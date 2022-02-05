@@ -38,7 +38,7 @@ const main = async () => {
 
   app.use(
     cors({
-      origin: ["https://studio.apollographql.com", "http://localhost:3000"],
+      origin: ["https://studio.apollographql.com", "http://localhost:5000/graphql" , "http://localhost:3000"],
       credentials: true,
     })
   );
@@ -58,7 +58,6 @@ const main = async () => {
       name: "qid",
       store: new RedisStore({
         client: redisClient,
-
         disableTouch: true,
       }),
       cookie: {
